@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>美妆视频号素材跑量新规解读和优化指引</title>
+<style>
+  :root{
+    --brand:#0052D9;
+    --brand-dark:#003A9B;
+    --accent:#FF7A00;
+    --success:#00A870;
+    --danger:#E34D59;
+    --ink:#181818;
+    --ink-2:#4A4A4A;
+    --line:#E5E7EB;
+    --bg:#F5F7FA;
+    --card:#FFFFFF;
+    --radius:14px;
+    --shadow:0 6px 24px rgba(0,0,0,0.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:32px 24px 80px}
+
+  /* Header */
+  .hero{position:relative;background:linear-gradient(135deg,#0052D9 0%,#0089FF 100%);color:#fff;border-radius:var(--radius);padding:44px 40px;overflow:hidden;margin-bottom:32px;box-shadow:var(--shadow)}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;background:rgba(255,255,255,.08);border-radius:50%;}
+  .hero::before{content:"";position:absolute;right:80px;bottom:-100px;width:220px;height:220px;background:rgba(255,255,255,.05);border-radius:50%;}
+  .hero .kicker{font-size:13px;letter-spacing:2px;opacity:.85;margin-bottom:12px}
+  .hero h1{font-size:36px;margin:0 0 12px;font-weight:700;letter-spacing:.5px}
+  .hero .sub{font-size:16px;opacity:.9;max-width:720px}
+  .hero .meta{margin-top:22px;display:flex;gap:22px;flex-wrap:wrap;font-size:13px;opacity:.85}
+  .hero .meta span::before{content:"●";color:#FFD666;margin-right:6px}
+
+  /* Section */
+  section{background:var(--card);border-radius:var(--radius);padding:36px 40px;margin-bottom:24px;box-shadow:var(--shadow)}
+  .sec-num{display:inline-flex;align-items:center;gap:10px;color:var(--brand);font-weight:700;font-size:14px;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase}
+  .sec-num em{font-style:normal;background:var(--brand);color:#fff;width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+  h2{font-size:26px;margin:0 0 8px;color:var(--ink)}
+  h2 .why{color:var(--brand);font-size:16px;font-weight:500;margin-left:10px}
+  .lead{color:var(--ink-2);font-size:15px;margin:0 0 24px}
+  h3{font-size:18px;margin:24px 0 12px;color:var(--ink)}
+
+  /* Rule card */
+  .rule-card{background:linear-gradient(135deg,#F0F6FF 0%,#EAF2FF 100%);border:1px solid #D6E4FF;border-radius:12px;padding:24px 28px;margin:20px 0}
+  .rule-formula{font-size:18px;text-align:center;padding:14px;background:#fff;border-radius:10px;color:var(--brand-dark);font-weight:600;letter-spacing:.5px;margin:14px 0 4px}
+  .rule-formula em{font-style:normal;color:var(--accent);padding:0 4px}
+
+  .kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;position:relative;overflow:hidden}
+  .kpi.k-down{border-left:4px solid var(--danger)}
+  .kpi.k-up{border-left:4px solid var(--success)}
+  .kpi .label{font-size:13px;color:var(--ink-2);margin-bottom:4px}
+  .kpi .value{font-size:22px;font-weight:700}
+  .kpi .arrow{font-size:20px;margin-left:6px}
+  .k-down .arrow{color:var(--danger)}
+  .k-up .arrow{color:var(--success)}
+  .kpi .tip{font-size:12px;color:var(--ink-2);margin-top:6px}
+
+  /* Data compare */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 8px}
+  .compare .col{border-radius:12px;padding:20px;border:1px solid var(--line)}
+  .compare .col.good{background:#F1FBF6;border-color:#B7E5CB}
+  .compare .col.bad{background:#FFF3F4;border-color:#F4B7BB}
+  .compare .col h4{margin:0 0 10px;font-size:15px}
+  .compare .col .num{font-size:32px;font-weight:800;color:var(--ink)}
+  .compare .col.good .num{color:var(--success)}
+  .compare .col.bad .num{color:var(--danger)}
+  .compare .col .desc{font-size:13px;color:var(--ink-2);margin-top:6px}
+
+  /* Hook module */
+  .hook{border:1px solid var(--line);border-radius:12px;padding:24px 26px;margin:18px 0;background:#FAFBFC}
+  .hook-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+  .hook-badge{background:var(--brand);color:#fff;font-size:12px;padding:3px 10px;border-radius:20px;font-weight:600;letter-spacing:.5px}
+  .hook-title{font-size:19px;font-weight:700;margin:0}
+  .hook-en{font-size:12px;color:#8B93A0;letter-spacing:1px}
+  .hook-desc{color:var(--ink-2);font-size:14px;margin:8px 0 16px}
+  .hook-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .tag{background:#EEF3FF;color:var(--brand-dark);font-size:12px;padding:4px 10px;border-radius:6px}
+
+  .videos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .videos.cols5{grid-template-columns:repeat(5,1fr)}
+  .videos.cols4{grid-template-columns:repeat(4,1fr)}
+  .vcard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+  .vcard:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,82,217,.1)}
+  .vcard video{width:100%;display:block;background:#000;aspect-ratio:9/16;object-fit:cover}
+  .vcard .info{padding:12px 14px}
+  .vcard .vtitle{font-size:13px;font-weight:600;color:var(--ink);line-height:1.4;min-height:36px}
+  .vcard .vmeta{margin-top:8px;display:flex;justify-content:space-between;font-size:12px;color:var(--ink-2)}
+  .vcard .vmeta strong{color:var(--danger)}
+
+  /* HOW section (AI paths) */
+  .path{display:grid;grid-template-columns:1fr;gap:22px;margin-top:18px}
+  .path-card{border:1px solid var(--line);border-radius:12px;padding:22px 24px;background:#FAFBFC}
+  .path-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .path-num{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand) 0%,#0089FF 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0}
+  .path-title{font-size:17px;font-weight:700;margin:0}
+  .path-sub{font-size:13px;color:var(--ink-2);margin-top:2px}
+  .path-body{display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:center}
+  .path-body img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+  .path-body .desc h5{margin:0 0 6px;font-size:14px;color:var(--brand-dark)}
+  .path-body .desc p{margin:0 0 10px;font-size:13.5px;color:var(--ink-2)}
+  .path-body .desc ul{margin:0;padding-left:20px;font-size:13px;color:var(--ink-2)}
+  .path-body .desc li{margin-bottom:4px}
+
+  /* Footer */
+  footer{text-align:center;color:#8B93A0;font-size:12px;padding:24px 0 0}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:32px 0}
+
+  @media (max-width:900px){
+    .videos{grid-template-columns:repeat(2,1fr)}
+    .videos.cols5{grid-template-columns:repeat(2,1fr)}
+    .videos.cols4{grid-template-columns:repeat(2,1fr)}
+    .compare{grid-template-columns:1fr}
+    .path-body{grid-template-columns:1fr}
+    .hero{padding:32px 24px}
+    .hero h1{font-size:26px}
+    section{padding:24px 20px}
+  }
+  @media (max-width:560px){
+    .videos{grid-template-columns:1fr}
+    .videos.cols5{grid-template-columns:1fr}
+    .videos.cols4{grid-template-columns:1fr}
+    .kpi-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="kicker">MEDIA CONVERGENCE · 视频号广告投放洞察</div>
+    <h1>美妆视频号素材<br>跑量新规解读和优化指引</h1>
+    <div class="sub">竞价跑量算法升级，素材内容力权重放大。基于 69 条真实广告素材实证分析，提炼四大万金油开场钩子，助力客户素材前 15 秒抓人力升级。</div>
+    <div class="meta">
+      <span>发布日期：2026-09-15</span>
+    </div>
+  </div>
+
+  <!-- ============================ PART 1: WHY ============================ -->
+  <section>
+    <div class="sec-num"><em>1</em>为什么 · WHY</div>
+    <h2>跑量规则变化：<span class="why">3秒完播率与播放时长权重被放大</span></h2>
+    <p class="lead">近期平台对视频号竞价跑量算法进行升级，素材内容力权重进一步提升，成为决定流量获取能力的核心变量。</p>
+
+    <div class="rule-card">
+      <div style="font-size:14px;color:var(--brand-dark);font-weight:600;margin-bottom:6px">📐 新竞争力得分逻辑</div>
+      <div class="rule-formula">竞争力得分 = ECPM + 生态指标（<em>3秒完播率</em> · <em>平均播放时长</em>）</div>
+      <div style="font-size:13px;color:var(--ink-2);text-align:center;margin-top:6px">出价能力 × 内容质量，共同决定素材放量能力</div>
+    </div>
+
+    <h3>两个核心考核指标</h3>
+    <div class="kpi-grid">
+      <div class="kpi k-down">
+        <div class="label">指标一 · 用户是否留下</div>
+        <div class="value">3秒完播率 <span class="arrow">↑</span></div>
+        <div class="tip">越高越好 · 反映开篇钩子抓人力</div>
+      </div>
+      <div class="kpi k-up">
+        <div class="label">指标二 · 用户看了多久</div>
+        <div class="value">平均播放时长 <span class="arrow">↑</span></div>
+        <div class="tip">越长越好 · 反映内容整体承接力</div>
+      </div>
+    </div>
+
+    <h3>数据佐证：优质素材 vs 普通素材差距悬殊</h3>
+    <div class="compare">
+      <div class="col good">
+        <h4>✅ 优质素材</h4>
+        <div class="num">67% <span style="font-size:14px;color:var(--ink-2)">3s完播</span></div>
+        <div class="desc">平均播放时长 ≈ 19 秒 · 拉爆流量的核心分水岭</div>
+      </div>
+      <div class="col bad">
+        <h4>⚠️ 普通素材</h4>
+        <div class="num">25% <span style="font-size:14px;color:var(--ink-2)">3s完播</span></div>
+        <div class="desc">平均播放时长 ≈ 4.8 秒 · 3 秒完播率偏低，大量用户开篇即流失</div>
+      </div>
+    </div>
+    <p style="margin-top:14px;font-size:14px;color:var(--ink-2)">
+      <strong style="color:var(--ink)">结论：</strong>做好投流内容决定基本盘，优质内容决定放量天花板。<b style="color:var(--ink)">前 15 秒</b>是决定 3 秒完播率和播放时长的胜负手。
+    </p>
+  </section>
+
+  <!-- ============================ PART 2: DO ============================ -->
+  <section>
+    <div class="sec-num"><em>2</em>做什么 · DO</div>
+    <h2>新规下，重点打磨素材<span class="why" style="color:var(--brand);font-weight:700;font-size:26px;margin-left:6px">前 15 秒</span></h2>
+    <p class="lead">基于 69 条爆款素材实证归纳出<b>四类万金油开场钩子</b>，建议对应素材量占比提升至 <b style="color:var(--brand)">70%+</b>，直接抬升 3s完播率与放量效率。</p>
+
+    <!-- Hook 1 -->
+    <div class="hook">
+      <div class="hook-head">
+        <span class="hook-badge">钩子类型 01</span>
+        <h4 class="hook-title">剧情钩子 · 家庭情感冲突演绎</h4>
+        <span class="hook-en">EMOTIONAL DRAMA HOOK</span>
+      </div>
+      <div class="hook-desc">通过高共鸣的家庭关系冲突（婚姻危机、婆媳矛盾、亲子话题）快速锁定 35 岁+ 核心人群，用"对号入座"式代入感留住用户。</div>
+      <div class="hook-tags">
+        <span class="tag">婚姻危机</span>
+        <span class="tag">婆媳冲突</span>
+        <span class="tag">夫妻相处</span>
+        <span class="tag">亲子互动</span>
+        <span class="tag">两性交往</span>
+      </div>
+      <div class="videos cols5">
+        <div class="vcard">
+          <video src="videos/h1_7_marriage.mp4" poster="thumbs/h1_7_marriage.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">婚姻危机 · 前妻突然来访</div>
+            <div class="vmeta"><span>婚姻危机</span><strong>3s完播 77.91%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h1_6_couple.mp4" poster="thumbs/h1_6_couple.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">婆媳冲突 · 39.9 vs 19.9 价格战</div>
+            <div class="vmeta"><span>婆媳冲突</span><strong>3s完播 69.27%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h1_4_mother.mp4" poster="thumbs/h1_4_mother.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">夫妻相处 · 老公出差反转剧情</div>
+            <div class="vmeta"><span>夫妻相处</span><strong>3s完播 67.61%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h1_31_filial.mp4" poster="thumbs/h1_31_filial.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">亲子互动 · 孝心买菜引冲突</div>
+            <div class="vmeta"><span>亲子互动</span><strong>3s完播 78.08%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h1_15_ballroom.mp4" poster="thumbs/h1_15_ballroom.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">两性交往 · 舞厅猎奇对峙</div>
+            <div class="vmeta"><span>两性交往</span><strong>3s完播 76.33%</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hook 2 -->
+    <div class="hook">
+      <div class="hook-head">
+        <span class="hook-badge">钩子类型 02</span>
+        <h4 class="hook-title">痛点钩子 · 场景化可视化效果对比</h4>
+        <span class="hook-en">PAIN-POINT VISUAL HOOK</span>
+      </div>
+      <div class="hook-desc">用「吸睛场景 + 痛点效果对比」制造视觉奇观，5 秒内让用户留住并看见产品价值，将功效可视化为惊叹瞬间。</div>
+      <div class="hook-tags">
+        <span class="tag">两性交往 × 皱纹起泡</span>
+        <span class="tag">跳舞联谊 × 抗皱起泡</span>
+        <span class="tag">夫妻大扫除 × 一喷干净</span>
+        <span class="tag">产品测评 × 脏净对比</span>
+        <span class="tag">美容院场景 × 淡斑起泡</span>
+      </div>
+      <div class="videos cols5">
+        <div class="vcard">
+          <video src="videos/h2_5_wrinkle.mp4" poster="thumbs/h2_5_wrinkle.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">两性交往 × 皱纹起泡视觉奇观</div>
+            <div class="vmeta"><span>皱纹起泡</span><strong>3s完播 78.48%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h2_dance_wrinkle.mp4" poster="thumbs/h2_dance_wrinkle.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">跳舞联谊 × 抗皱起泡对比</div>
+            <div class="vmeta"><span>抗皱起泡</span><strong>3s完播 77% · 23s</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h2_23_dirty.mp4" poster="thumbs/h2_23_dirty.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">夫妻大扫除 × 一喷干净</div>
+            <div class="vmeta"><span>脏净对比</span><strong>3s完播 70.07%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h2_review_dirty.mp4" poster="thumbs/h2_review_dirty.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">产品测评 × 脏净对比实验</div>
+            <div class="vmeta"><span>测评对比</span><strong>3s完播 60%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h2_33_medi.mp4" poster="thumbs/h2_33_medi.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">美容院场景 × 淡斑起泡冲突</div>
+            <div class="vmeta"><span>美容院冲突</span><strong>3s完播 78.07%</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hook 3 -->
+    <div class="hook">
+      <div class="hook-head">
+        <span class="hook-badge">钩子类型 03</span>
+        <h4 class="hook-title">人设钩子 · 权威反差 / 打假揭秘</h4>
+        <span class="hook-en">AUTHORITY-CONTRAST HOOK</span>
+      </div>
+      <div class="hook-desc">用「权威人设 + 反差噱头 / 人生感悟」制造认知冲击——专家贬低抨击、博主打假揭秘、明星/名人访谈焦虑分享或声明背书，用戏剧化观点让用户停下来听。</div>
+      <div class="hook-tags">
+        <span class="tag">明星访谈焦虑分享</span>
+        <span class="tag">明星背书声明承诺</span>
+        <span class="tag">名人身体管理分享</span>
+        <span class="tag">专家贬低抨击</span>
+        <span class="tag">博主打假揭秘</span>
+      </div>
+      <div class="videos cols5">
+        <div class="vcard">
+          <video src="videos/h3_star_interview.mp4" poster="thumbs/h3_star_interview.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">明星访谈 · 焦虑话题切入产品</div>
+            <div class="vmeta"><span>明星访谈</span><strong>3s完播 56% · 10s</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h3_pledge.mp4" poster="thumbs/h3_pledge.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">明星背书 · 出镜声明与承诺</div>
+            <div class="vmeta"><span>声明承诺</span><strong>3s完播 74%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h3_bodymgmt.mp4" poster="thumbs/h3_bodymgmt.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">名人开麦 · 身体管理经验分享</div>
+            <div class="vmeta"><span>身体管理</span><strong>3s完播 58%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h3_16_founder.mp4" poster="thumbs/h3_16_founder.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">创始人反差金句"这些人都是傻子"</div>
+            <div class="vmeta"><span>权威反差</span><strong>3s完播 60.60%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h3_40_expose.mp4" poster="thumbs/h3_40_expose.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">博主打假·"无良商家"洗净对比</div>
+            <div class="vmeta"><span>打假揭秘</span><strong>3s完播 63.75%</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hook 4 -->
+    <div class="hook">
+      <div class="hook-head">
+        <span class="hook-badge">钩子类型 04</span>
+        <h4 class="hook-title">资讯钩子 · 新闻热点包装</h4>
+        <span class="hook-en">NEWS / INFO HOOK</span>
+      </div>
+      <div class="hook-desc">仿新闻资讯或街采格式包装产品/事件，用「噱头事件报道 + 节点新闻捆绑 + 明星八卦 + 街采话题」建立权威感与信息价值感，让广告不像广告，更易被大众媒介接受。</div>
+      <div class="hook-tags">
+        <span class="tag">噱头事件报道</span>
+        <span class="tag">节点新闻捆绑</span>
+        <span class="tag">"XX 传开了"式句式</span>
+        <span class="tag">娱乐八卦资讯</span>
+        <span class="tag">素人街采话题</span>
+      </div>
+      <div class="videos cols4">
+        <div class="vcard">
+          <video src="videos/h4_34_news.mp4" poster="thumbs/h4_34_news.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">"北京传开了" · 76岁奶奶证言</div>
+            <div class="vmeta"><span>噱头播报</span><strong>3s完播 65.40%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h4_38_broadcast.mp4" poster="thumbs/h4_38_broadcast.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">新闻悬念播报类开场</div>
+            <div class="vmeta"><span>新闻悬念</span><strong>平均播放 36.58s</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h4_gossip.mp4" poster="thumbs/h4_gossip.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">娱乐主持人 · 明星八卦资讯播报</div>
+            <div class="vmeta"><span>娱乐八卦</span><strong>3s完播 57%</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h4_streetage.mp4" poster="thumbs/h4_streetage.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">素人街采 · 年龄焦虑话题切入</div>
+            <div class="vmeta"><span>街采话题</span><strong>3s完播 66%</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PART 3: HOW ============================ -->
+  <section>
+    <div class="sec-num"><em>3</em>怎么做 · HOW</div>
+    <h2>AI 工具高效生产好内容<span class="why">两条落地路径，按能力分层选择</span></h2>
+    <p class="lead">从"手动拍摄"升级到"AI 反推 + 智能生产"，让爆款开篇实现规模化复制。</p>
+
+    <div class="path">
+
+      <!-- Path 1 -->
+      <div class="path-card">
+        <div class="path-head">
+          <div class="path-num">01</div>
+          <div>
+            <h4 class="path-title">路径一 · 成熟客户方案</h4>
+            <div class="path-sub">GPT 反推提示词 + LibTV 等 AI 视频创作工具</div>
+          </div>
+        </div>
+        <div class="path-body">
+          <img src="assets/libtv.jpg" alt="LibTV Agent 创作平台" />
+          <div class="desc">
+            <h5>适用对象</h5>
+            <p>已具备成熟 AI 素材制作能力的品牌方 / 头部代理商</p>
+            <h5>核心动作</h5>
+            <ul>
+              <li>用 GPT 反推爆款开篇的镜头、台词、人设、卖点结构提示词</li>
+              <li>用 LibTV、Seedance、可灵等专业级 AI 视频工具批量生产</li>
+              <li>建立 <b>钩子模板库</b>，快速产出「同结构、多变量」的素材矩阵</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Path 2 -->
+      <div class="path-card">
+        <div class="path-head">
+          <div class="path-num">02</div>
+          <div>
+            <h4 class="path-title">路径二 · 入门客户方案</h4>
+            <div class="path-sub">腾讯官方妙思平台 · 视频生成 · 技能广场</div>
+          </div>
+        </div>
+        <div class="path-body">
+          <img src="assets/miaosi.jpg" alt="腾讯妙思 · 技能广场" />
+          <div class="desc">
+            <h5>适用对象</h5>
+            <p>刚接触 AI 素材生产、缺少专业创作团队的中小客户</p>
+            <h5>核心动作</h5>
+            <ul>
+              <li>登录 <b>腾讯妙思</b>（官方 AI 创作平台）→ 视频生成 → 技能广场</li>
+              <li>技能广场已内置多个美妆爆款开篇模板：石膏面孔老年对比、液态金属焕肤、美妆阳光通透感、草本面膜研磨等</li>
+              <li>选中模板一键生成，低成本跟拍平台爆款开篇</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 视频号广告投放洞察 · 本报告基于 69 条素材真实数据分析，为客户内部提案参考使用
+  </footer>
+
+</div>
+</body>
+</html>

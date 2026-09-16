@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美妆视频号素材跑量新规解读和优化指引 · OnePage速览</title>
+<style>
+  @page { size: A4; margin: 8mm; }
+  :root{
+    --brand:#0052D9;
+    --brand-dark:#003A9B;
+    --accent:#FF7A00;
+    --success:#00A870;
+    --danger:#E34D59;
+    --ink:#181818;
+    --ink-2:#4A4A4A;
+    --line:#E5E7EB;
+    --bg:#F5F7FA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#EDF0F5;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  .page{
+    width:794px;         /* A4 96dpi */
+    margin:20px auto;
+    background:#fff;
+    padding:22px 28px 20px;
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+    display:flex;flex-direction:column;
+    font-size:11px;line-height:1.5;
+  }
+  /* Header */
+  .head{
+    background:linear-gradient(135deg,#0052D9 0%,#0089FF 100%);
+    color:#fff;padding:14px 20px;border-radius:8px;
+    display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:12px;position:relative;overflow:hidden;
+  }
+  .head::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;background:rgba(255,255,255,.08);border-radius:50%}
+  .head .title{font-size:18px;font-weight:700;letter-spacing:.5px;position:relative;z-index:1}
+  .head .sub{font-size:10px;opacity:.85;margin-top:2px;position:relative;z-index:1}
+  .head .badge{position:relative;z-index:1;background:rgba(255,255,255,.2);padding:5px 10px;border-radius:14px;font-size:10px;font-weight:600}
+
+  /* Section title */
+  .stitle{display:flex;align-items:center;gap:8px;margin:6px 0 8px}
+  .stitle .num{width:22px;height:22px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;flex-shrink:0}
+  .stitle .txt{font-size:14px;font-weight:700}
+  .stitle .en{font-size:10px;color:var(--brand);letter-spacing:1px;margin-left:auto}
+
+  /* Part 1 */
+  .p1{display:grid;grid-template-columns:1.3fr 1fr;gap:10px;margin-bottom:10px}
+  .p1 .formula{background:linear-gradient(135deg,#F0F6FF,#EAF2FF);border:1px solid #D6E4FF;border-radius:8px;padding:10px 12px}
+  .formula .flabel{font-size:10px;color:var(--brand-dark);font-weight:600;margin-bottom:4px}
+  .formula .fval{background:#fff;border-radius:6px;padding:8px;font-weight:700;color:var(--brand-dark);font-size:11.5px;text-align:center;letter-spacing:.3px}
+  .formula .fval em{font-style:normal;color:var(--accent);padding:0 3px}
+  .formula .ftip{font-size:9.5px;color:var(--ink-2);text-align:center;margin-top:4px}
+  .p1 .kpis{display:grid;grid-template-rows:1fr 1fr;gap:6px}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-size:10px}
+  .kpi.down{border-left:3px solid var(--danger)}
+  .kpi.up{border-left:3px solid var(--success)}
+  .kpi .k1{color:var(--ink-2);font-size:9.5px;margin-bottom:2px}
+  .kpi .k2{font-weight:700;font-size:12px}
+  .kpi.down .arr{color:var(--danger)}
+  .kpi.up .arr{color:var(--success)}
+
+  /* Compare block */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+  .cbox{border-radius:8px;padding:8px 12px;border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  .cbox.good{background:#F1FBF6;border-color:#B7E5CB}
+  .cbox.bad{background:#FFF3F4;border-color:#F4B7BB}
+  .cbox .l{font-size:10px;color:var(--ink-2)}
+  .cbox .l b{color:var(--ink);font-size:11px;display:block;margin-bottom:1px}
+  .cbox .r{text-align:right}
+  .cbox.good .r{color:var(--success)}
+  .cbox.bad .r{color:var(--danger)}
+  .cbox .rn{font-weight:800;font-size:18px;line-height:1}
+  .cbox .ru{font-size:9px;color:var(--ink-2);margin-top:1px}
+
+  /* Part 2 hooks */
+  .hooks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px}
+  .hook{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#FAFBFC}
+  .hbadge{display:inline-block;background:var(--brand);color:#fff;font-size:8.5px;padding:1px 6px;border-radius:8px;font-weight:600;letter-spacing:.5px;margin-bottom:4px}
+  .hname{font-size:11.5px;font-weight:700;margin-bottom:3px;color:var(--ink)}
+  .hway{font-size:9.5px;color:var(--ink-2);margin-bottom:4px;line-height:1.4}
+  .hway b{color:var(--brand-dark)}
+  .hvid{font-size:9px;color:#666;background:#fff;border:1px dashed #ccd;border-radius:4px;padding:3px 6px;margin-top:2px;display:flex;justify-content:space-between}
+  .hvid strong{color:var(--danger)}
+
+  /* Case with keyframes - 竖版9:16 */
+  .cases{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:5px}
+  .case{background:#fff;border:1px solid var(--line);border-radius:5px;padding:4px}
+  .case .cframes{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:3px}
+  .case .cframes img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:3px;display:block;background:#000}
+  .case .cinfo{padding:2px}
+  .case .cname{color:var(--ink);font-weight:600;font-size:9px;display:block;margin-bottom:1px}
+  .case .cdata{color:var(--danger);font-weight:700;font-size:9px}
+
+  /* Part 3 paths */
+  .paths{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .path{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#FAFBFC}
+  .pnum{display:inline-block;background:linear-gradient(135deg,var(--brand),#0089FF);color:#fff;font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;margin-right:4px}
+  .ptitle{display:inline-block;font-size:11.5px;font-weight:700}
+  .psub{font-size:9.5px;color:var(--ink-2);margin:2px 0 5px}
+  .path img{width:100%;border-radius:4px;border:1px solid var(--line);margin-bottom:5px;height:88px;object-fit:cover;object-position:top}
+  .path ul{padding-left:14px;font-size:9.5px;color:var(--ink-2);line-height:1.5}
+  .path li{margin-bottom:1px}
+  .path b{color:var(--brand-dark)}
+
+  /* Highlight strip */
+  .strip{background:#FFF7EB;border:1px solid #FFE0B2;border-left:3px solid var(--accent);border-radius:6px;padding:6px 10px;font-size:10px;color:#7A4D00;margin:6px 0 10px;display:flex;align-items:center;gap:6px}
+  .strip b{color:var(--accent)}
+
+  footer{text-align:center;color:#8B93A0;font-size:9px;margin-top:auto;padding-top:8px;border-top:1px dashed var(--line)}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="head">
+    <div>
+      <div class="title">美妆视频号素材 · 跑量新规解读和优化指引</div>
+      <div class="sub">竞价算法升级 · 素材内容力权重放大 · 前 15 秒决定放量能力</div>
+    </div>
+    <div class="badge">ONE PAGE · 2026.09</div>
+  </div>
+
+  <!-- Part 1 WHY -->
+  <div class="stitle"><span class="num">1</span><span class="txt">跑量规则变化：3秒完播率与播放时长权重放大</span><span class="en">WHY</span></div>
+  <div class="p1">
+    <div class="formula">
+      <div class="flabel">📐 新竞争力得分逻辑</div>
+      <div class="fval">竞争力得分 = ECPM + 生态指标（<em>3秒完播率</em> · <em>平均播放时长</em>）</div>
+      <div class="ftip">出价能力 × 内容质量 · 共同决定放量天花板</div>
+    </div>
+    <div class="kpis">
+      <div class="kpi down">
+        <div class="k1">指标一 · 用户是否留下</div>
+        <div class="k2">3秒完播率 <span class="arr">↑ 越高越好</span></div>
+      </div>
+      <div class="kpi up">
+        <div class="k1">指标二 · 用户看了多久</div>
+        <div class="k2">平均播放时长 <span class="arr">↑ 越长越好</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="compare">
+    <div class="cbox good">
+      <div class="l"><b>✅ 优质素材</b>3s完播 / 平均播放</div>
+      <div class="r"><div class="rn">67% · 19s</div><div class="ru">拉爆流量分水岭</div></div>
+    </div>
+    <div class="cbox bad">
+      <div class="l"><b>⚠️ 普通素材</b>3s完播 / 平均播放</div>
+      <div class="r"><div class="rn">25% · 4.8s</div><div class="ru">3秒内即被快滑</div></div>
+    </div>
+  </div>
+
+  <div class="strip">💡 <b>核心结论</b>：做好投流内容决定基本盘，优质内容决定放量天花板。<b>前 15 秒</b>是决定 3s完播率与播放时长的关键胜负手。</div>
+
+  <!-- Part 2 DO -->
+  <div class="stitle"><span class="num">2</span><span class="txt">四类万金油开场钩子 · 建议素材量占比 70%+</span><span class="en">DO</span></div>
+
+  <div class="hooks">
+    <div class="hook">
+      <span class="hbadge">钩子 01 · 剧情</span>
+      <div class="hname">家庭情感冲突演绎</div>
+      <div class="hway"><b>手法：</b>婚姻危机 / 婆媳冲突 / 夫妻相处 / 亲子互动 / 两性交往</div>
+      <div class="cases">
+        <div class="case">
+          <div class="cframes"><img src="frames/h1_7_marriage_f1.jpg"><img src="frames/h1_7_marriage_f2.jpg"></div>
+          <div class="cinfo"><span class="cname">婚姻危机·前妻来访</span><span class="cdata">3s完播 77.9%</span></div>
+        </div>
+        <div class="case">
+          <div class="cframes"><img src="frames/h1_6_couple_f1.jpg"><img src="frames/h1_6_couple_f2.jpg"></div>
+          <div class="cinfo"><span class="cname">婆媳冲突·价格战</span><span class="cdata">3s完播 69.3%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hook">
+      <span class="hbadge">钩子 02 · 痛点</span>
+      <div class="hname">场景化可视化效果对比</div>
+      <div class="hway"><b>手法：</b>两性交往×皱纹起泡 / 跳舞联谊×抗皱起泡 / 美容院场景×淡斑起泡 等</div>
+      <div class="cases">
+        <div class="case">
+          <div class="cframes"><img src="frames/h2_33_medi_f1.jpg"><img src="frames/h2_33_medi_f2.jpg"></div>
+          <div class="cinfo"><span class="cname">美容院场景·淡斑起泡</span><span class="cdata">3s完播 78.1%</span></div>
+        </div>
+        <div class="case">
+          <div class="cframes"><img src="frames/h2_dance_wrinkle_f1.jpg"><img src="frames/h2_dance_wrinkle_f2.jpg"></div>
+          <div class="cinfo"><span class="cname">跳舞联谊·抗皱起泡</span><span class="cdata">3s完播 77% · 23s</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hook">
+      <span class="hbadge">钩子 03 · 人设</span>
+      <div class="hname">权威反差 / 打假揭秘</div>
+      <div class="hway"><b>手法：</b>明星/名人访谈 · 声明承诺 · 身体管理 / 博主打假 / 创始人反差</div>
+      <div class="cases">
+        <div class="case">
+          <div class="cframes"><img src="frames/h3_16_founder_f1.jpg"><img src="frames/h3_16_founder_f2.jpg"></div>
+          <div class="cinfo"><span class="cname">创始人反差金句</span><span class="cdata">3s完播 60.6%</span></div>
+        </div>
+        <div class="case">
+          <div class="cframes"><img src="frames/h3_40_expose_f1.jpg"><img src="frames/h3_40_expose_f2.jpg"></div>
+          <div class="cinfo"><span class="cname">博主打假·无良商家</span><span class="cdata">3s完播 63.8%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hook">
+      <span class="hbadge">钩子 04 · 资讯</span>
+      <div class="hname">新闻热点包装</div>
+      <div class="hway"><b>手法：</b>噱头事件报道 / 娱乐八卦资讯 / 素人街采话题</div>
+      <div class="cases">
+        <div class="case">
+          <div class="cframes"><img src="frames/h4_streetage_f1.jpg"><img src="frames/h4_streetage_f2.jpg"></div>
+          <div class="cinfo"><span class="cname">素人街采·年龄焦虑</span><span class="cdata">3s完播 66%</span></div>
+        </div>
+        <div class="case">
+          <div class="cframes"><img src="frames/h4_34_news_f1.jpg"><img src="frames/h4_34_news_f2.jpg"></div>
+          <div class="cinfo"><span class="cname">"北京传开了"新闻式</span><span class="cdata">3s完播 65.4%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Part 3 HOW -->
+  <div class="stitle"><span class="num">3</span><span class="txt">AI 工具高效生产好内容 · 两条落地路径</span><span class="en">HOW</span></div>
+  <div class="paths">
+    <div class="path">
+      <div><span class="pnum">路径 01</span><span class="ptitle">成熟客户方案</span></div>
+      <div class="psub">GPT 反推提示词 + LibTV 等专业 AI 视频工具</div>
+      <img src="assets/libtv.jpg" alt="LibTV">
+      <ul>
+        <li>GPT <b>反推爆款开篇提示词</b>（镜头/台词/人设/卖点结构）</li>
+        <li>LibTV / Seedance / 可灵等工具批量生产</li>
+        <li>建立 <b>钩子模板库</b>，同结构多变量矩阵化投放</li>
+      </ul>
+    </div>
+    <div class="path">
+      <div><span class="pnum">路径 02</span><span class="ptitle">入门客户方案</span></div>
+      <div class="psub">腾讯官方妙思平台 · 视频生成 · 技能广场</div>
+      <img src="assets/miaosi.jpg" alt="妙思">
+      <ul>
+        <li>登录 <b>腾讯妙思</b> → 视频生成 → 技能广场</li>
+        <li>内置美妆爆款开篇模板（石膏面孔老年对比/液态金属焕肤等）</li>
+        <li>一键生成，<b>低成本跟拍</b>平台爆款开篇</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>基于 69 条真实广告素材 A/B 对比分析 · 2026-09-15 发布 · 客户提案参考</footer>
+</div>
+</body>
+</html>
