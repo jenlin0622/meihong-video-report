@@ -82,6 +82,12 @@
   .videos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .videos.cols5{grid-template-columns:repeat(5,1fr)}
   .videos.cols4{grid-template-columns:repeat(4,1fr)}
+  .videos.cols2{grid-template-columns:repeat(2,1fr)}
+  .videos.cols2 .video,.videos.cols2 video{max-width:420px;margin:0 auto}
+  .vtag{display:inline-block;font-size:10.5px;padding:1px 6px;border-radius:4px;background:#EEF3FF;color:var(--brand-dark);margin-left:6px;vertical-align:middle}
+  .vtag.mh{background:#FFF1F0;color:#C0392B}
+  .vtag.food{background:#F6FFED;color:#389E0D}
+  .vtag.other{background:#F0F0F0;color:#595959}
   .vcard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .2s,box-shadow .2s}
   .vcard:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,82,217,.1)}
   .vcard video{width:100%;display:block;background:#000;aspect-ratio:9/16;object-fit:cover}
@@ -187,7 +193,7 @@
   <section>
     <div class="sec-num"><em>2</em>做什么 · DO</div>
     <h2>新规下，重点打磨素材<span class="why" style="color:var(--brand);font-weight:700;font-size:26px;margin-left:6px">前 15 秒</span></h2>
-    <p class="lead">基于 69 条爆款素材实证归纳出<b>四类万金油开场钩子</b>，建议对应素材量占比提升至 <b style="color:var(--brand)">70%+</b>，直接抬升 3s完播率与放量效率。</p>
+    <p class="lead">基于 <b>99 条</b>爆款素材实证归纳出<b>五类万金油开场钩子</b>（10-13 新增 30 条跨行业样本验证，新增「05 猎奇悬念」类），建议对应素材量占比提升至 <b style="color:var(--brand)">70%+</b>，直接抬升 3s完播率与放量效率。</p>
 
     <!-- Hook 1 -->
     <div class="hook">
@@ -196,48 +202,57 @@
         <h4 class="hook-title">剧情钩子 · 家庭情感冲突演绎</h4>
         <span class="hook-en">EMOTIONAL DRAMA HOOK</span>
       </div>
-      <div class="hook-desc">通过高共鸣的家庭关系冲突（婚姻危机、婆媳矛盾、亲子话题）快速锁定 35 岁+ 核心人群，用"对号入座"式代入感留住用户。</div>
+      <div class="hook-desc">通过高共鸣的家庭关系冲突（婚姻危机、婆媳矛盾、亲子话题）快速锁定 35 岁+ 核心人群，用"对号入座"式代入感留住用户。<b style="color:var(--brand)">本期 30 条新样本中剧情类占比最高（美护 9/16），且仍是唯一稳定跑出 85% 完播的类型</b>；新变体：旧相识重逢、年龄差恋、未婚先孕悬念。</div>
       <div class="hook-tags">
         <span class="tag">婚姻危机</span>
         <span class="tag">婆媳冲突</span>
         <span class="tag">夫妻相处</span>
         <span class="tag">亲子互动</span>
         <span class="tag">两性交往</span>
+        <span class="tag">旧相识重逢</span>
+        <span class="tag">年龄差恋悬念</span>
       </div>
-      <div class="videos cols5">
+      <div class="videos">
         <div class="vcard">
-          <video src="videos/h1_7_marriage.mp4" poster="thumbs/h1_7_marriage.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h1_m12_scissors.mp4" poster="thumbs/h1_m12_scissors.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">婚姻危机 · 前妻突然来访</div>
-            <div class="vmeta"><span>婚姻危机</span><strong>3s完播 77.91%</strong></div>
+            <div class="vtitle">婚姻搞笑 · 床上递剪刀与玩具鹅<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>夫妻相处</span><strong>3s完播 85% · 31s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h1_6_couple.mp4" poster="thumbs/h1_6_couple.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h1_m04_massage.mp4" poster="thumbs/h1_m04_massage.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">婆媳冲突 · 39.9 vs 19.9 价格战</div>
-            <div class="vmeta"><span>婆媳冲突</span><strong>3s完播 69.27%</strong></div>
+            <div class="vtitle">夫妻相处 · 从背后抱住怕看见她的脸<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>衰老回避</span><strong>3s完播 76% · 47s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h1_4_mother.mp4" poster="thumbs/h1_4_mother.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h1_m02_eyebag.mp4" poster="thumbs/h1_m02_eyebag.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">夫妻相处 · 老公出差反转剧情</div>
-            <div class="vmeta"><span>夫妻相处</span><strong>3s完播 67.61%</strong></div>
+            <div class="vtitle">夫妻吵架 · 你出门怎么又不化妆<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>痛点前置</span><strong>3s完播 70% · 17s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h1_31_filial.mp4" poster="thumbs/h1_31_filial.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h1_m11_agemix.mp4" poster="thumbs/h1_m11_agemix.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">亲子互动 · 孝心买菜引冲突</div>
-            <div class="vmeta"><span>亲子互动</span><strong>3s完播 78.08%</strong></div>
+            <div class="vtitle">年龄差恋 · "我都能做你妈了"<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>两性猎奇</span><strong>3s完播 74% · 17s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h1_15_ballroom.mp4" poster="thumbs/h1_15_ballroom.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h1_m27_reunion.mp4" poster="thumbs/h1_m27_reunion.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">两性交往 · 舞厅猎奇对峙</div>
-            <div class="vmeta"><span>两性交往</span><strong>3s完播 76.33%</strong></div>
+            <div class="vtitle">旧相识重逢 · 大学我睡你上铺<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>重逢悬念</span><strong>3s完播 66% · 21s</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h1_m05_pregnant.mp4" poster="thumbs/h1_m05_pregnant.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">未婚先孕 · 老公什么时候娶我们<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>情感悬念</span><strong>3s完播 76% · 16s</strong></div>
           </div>
         </div>
       </div>
@@ -250,48 +265,27 @@
         <h4 class="hook-title">痛点钩子 · 场景化可视化效果对比</h4>
         <span class="hook-en">PAIN-POINT VISUAL HOOK</span>
       </div>
-      <div class="hook-desc">用「吸睛场景 + 痛点效果对比」制造视觉奇观，5 秒内让用户留住并看见产品价值，将功效可视化为惊叹瞬间。</div>
+      <div class="hook-desc">用「吸睛场景 + 痛点效果对比」制造视觉奇观，5 秒内让用户留住并看见产品价值，将功效可视化为惊叹瞬间。<b style="color:#C0392B">⚠️ 本期洞察：30 条新样本中美护痛点类仅 2 条（占比 12%），较上轮样本明显收缩——大量"效果奇观"开场已升级为 05 猎奇悬念类（用不可能画面替代单纯效果对比）</b>，建议痛点类保留但控制占比。</div>
       <div class="hook-tags">
+        <span class="tag">实验演示 × 脏净对比</span>
+        <span class="tag">痛点归因 × 权威背书</span>
         <span class="tag">两性交往 × 皱纹起泡</span>
         <span class="tag">跳舞联谊 × 抗皱起泡</span>
-        <span class="tag">夫妻大扫除 × 一喷干净</span>
-        <span class="tag">产品测评 × 脏净对比</span>
         <span class="tag">美容院场景 × 淡斑起泡</span>
       </div>
-      <div class="videos cols5">
+      <div class="videos cols2">
         <div class="vcard">
-          <video src="videos/h2_5_wrinkle.mp4" poster="thumbs/h2_5_wrinkle.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h2_m09_oil.mp4" poster="thumbs/h2_m09_oil.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">两性交往 × 皱纹起泡视觉奇观</div>
-            <div class="vmeta"><span>皱纹起泡</span><strong>3s完播 78.48%</strong></div>
+            <div class="vtitle">实验演示 · 滚烫开水冲油斑对比<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>脏净对比</span><strong>3s完播 67% · 15s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h2_dance_wrinkle.mp4" poster="thumbs/h2_dance_wrinkle.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h2_m13_eyebag.mp4" poster="thumbs/h2_m13_eyebag.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">跳舞联谊 × 抗皱起泡对比</div>
-            <div class="vmeta"><span>抗皱起泡</span><strong>3s完播 77% · 23s</strong></div>
-          </div>
-        </div>
-        <div class="vcard">
-          <video src="videos/h2_23_dirty.mp4" poster="thumbs/h2_23_dirty.jpg" controls preload="metadata" playsinline muted></video>
-          <div class="info">
-            <div class="vtitle">夫妻大扫除 × 一喷干净</div>
-            <div class="vmeta"><span>脏净对比</span><strong>3s完播 70.07%</strong></div>
-          </div>
-        </div>
-        <div class="vcard">
-          <video src="videos/h2_review_dirty.mp4" poster="thumbs/h2_review_dirty.jpg" controls preload="metadata" playsinline muted></video>
-          <div class="info">
-            <div class="vtitle">产品测评 × 脏净对比实验</div>
-            <div class="vmeta"><span>测评对比</span><strong>3s完播 60%</strong></div>
-          </div>
-        </div>
-        <div class="vcard">
-          <video src="videos/h2_33_medi.mp4" poster="thumbs/h2_33_medi.jpg" controls preload="metadata" playsinline muted></video>
-          <div class="info">
-            <div class="vtitle">美容院场景 × 淡斑起泡冲突</div>
-            <div class="vmeta"><span>美容院冲突</span><strong>3s完播 78.07%</strong></div>
+            <div class="vtitle">眼袋归因 · "听听这位老师怎么说"<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>痛点归因</span><strong>3s完播 68% · 13s</strong></div>
           </div>
         </div>
       </div>
@@ -304,48 +298,55 @@
         <h4 class="hook-title">人设钩子 · 权威反差 / 打假揭秘</h4>
         <span class="hook-en">AUTHORITY-CONTRAST HOOK</span>
       </div>
-      <div class="hook-desc">用「权威人设 + 反差噱头 / 人生感悟」制造认知冲击——专家贬低抨击、博主打假揭秘、明星/名人访谈焦虑分享或声明背书，用戏剧化观点让用户停下来听。</div>
+      <div class="hook-desc">用「权威人设 + 反差噱头 / 人生感悟」制造认知冲击——专家科普、博主打假揭秘、明星/名人访谈焦虑分享或声明背书，用戏剧化观点让用户停下来听。<b style="color:var(--brand)">本期洞察：人设类是跨行业通用度最高的一类（美护 + 食品饮料均跑通），且"素人丈夫/老伴视角"正在替代明星背书成为新主流——成本更低、可信度更高</b>。</div>
       <div class="hook-tags">
         <span class="tag">明星访谈焦虑分享</span>
-        <span class="tag">明星背书声明承诺</span>
-        <span class="tag">名人身体管理分享</span>
-        <span class="tag">专家贬低抨击</span>
+        <span class="tag">素人丈夫/老伴视角</span>
+        <span class="tag">医生权威科普</span>
+        <span class="tag">中老年经验口播</span>
         <span class="tag">博主打假揭秘</span>
       </div>
-      <div class="videos cols5">
+      <div class="videos">
         <div class="vcard">
-          <video src="videos/h3_star_interview.mp4" poster="thumbs/h3_star_interview.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h3_m21_star.mp4" poster="thumbs/h3_m21_star.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">明星访谈 · 焦虑话题切入产品</div>
-            <div class="vmeta"><span>明星访谈</span><strong>3s完播 56% · 10s</strong></div>
+            <div class="vtitle">明星红毯访谈 · 49岁还能素颜<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>明星访谈</span><strong>3s完播 65% · 13s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h3_pledge.mp4" poster="thumbs/h3_pledge.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h3_m08_husband.mp4" poster="thumbs/h3_m08_husband.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">明星背书 · 出镜声明与承诺</div>
-            <div class="vmeta"><span>声明承诺</span><strong>3s完播 74%</strong></div>
+            <div class="vtitle">素人丈夫视角 · 51岁老婆的年轻习惯<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>素人视角</span><strong>3s完播 67% · 18s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h3_bodymgmt.mp4" poster="thumbs/h3_bodymgmt.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h3_m14_doctor.mp4" poster="thumbs/h3_m14_doctor.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">名人开麦 · 身体管理经验分享</div>
-            <div class="vmeta"><span>身体管理</span><strong>3s完播 58%</strong></div>
+            <div class="vtitle">医生权威 · 转头就忘是神经氨酸<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>医生科普</span><strong>3s完播 77% · 13s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h3_16_founder.mp4" poster="thumbs/h3_16_founder.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h3_m16_interview.mp4" poster="thumbs/h3_m16_interview.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">创始人反差金句"这些人都是傻子"</div>
-            <div class="vmeta"><span>权威反差</span><strong>3s完播 60.60%</strong></div>
+            <div class="vtitle">访谈节目 · 老伴把枸杞当零食吃<span class="vtag food">食品饮料</span></div>
+            <div class="vmeta"><span>揭秘式访谈</span><strong>3s完播 70% · 13s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h3_40_expose.mp4" poster="thumbs/h3_40_expose.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h3_m18_diet.mp4" poster="thumbs/h3_m18_diet.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">博主打假·"无良商家"洗净对比</div>
-            <div class="vmeta"><span>打假揭秘</span><strong>3s完播 63.75%</strong></div>
+            <div class="vtitle">医生科普 · 免炖小米粥三件套<span class="vtag food">食品饮料</span></div>
+            <div class="vmeta"><span>清单式科普</span><strong>3s完播 65% · 20s</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h3_m30_elder.mp4" poster="thumbs/h3_m30_elder.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">中老年经验口播 · 只剩一个人时<span class="vtag food">食品饮料</span></div>
+            <div class="vmeta"><span>人生感悟</span><strong>3s完播 79% · 39s</strong></div>
           </div>
         </div>
       </div>
@@ -358,41 +359,81 @@
         <h4 class="hook-title">资讯钩子 · 新闻热点包装</h4>
         <span class="hook-en">NEWS / INFO HOOK</span>
       </div>
-      <div class="hook-desc">仿新闻资讯或街采格式包装产品/事件，用「噱头事件报道 + 节点新闻捆绑 + 明星八卦 + 街采话题」建立权威感与信息价值感，让广告不像广告，更易被大众媒介接受。</div>
+      <div class="hook-desc">仿新闻资讯或街采格式包装产品/事件，用「噱头事件报道 + 节点新闻捆绑 + 明星八卦 + 街采话题」建立权威感与信息价值感，让广告不像广告，更易被大众媒介接受。<b style="color:var(--brand)">本期洞察：资讯类在本期美护样本中 0 命中，全部集中在食品饮料——资讯壳对"入口类/养生类"产品更友好，美妆品类慎用（易触发功效/新闻资质审核）</b>。</div>
       <div class="hook-tags">
         <span class="tag">噱头事件报道</span>
         <span class="tag">节点新闻捆绑</span>
         <span class="tag">"XX 传开了"式句式</span>
-        <span class="tag">娱乐八卦资讯</span>
+        <span class="tag">热点地域/话题绑定</span>
         <span class="tag">素人街采话题</span>
       </div>
       <div class="videos cols4">
         <div class="vcard">
-          <video src="videos/h4_34_news.mp4" poster="thumbs/h4_34_news.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h4_m07_maotai.mp4" poster="thumbs/h4_m07_maotai.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">"北京传开了" · 76岁奶奶证言</div>
-            <div class="vmeta"><span>噱头播报</span><strong>3s完播 65.40%</strong></div>
+            <div class="vtitle">新闻悬念 · 女子收到茅台镇包裹<span class="vtag food">食品饮料</span></div>
+            <div class="vmeta"><span>噱头报道</span><strong>3s完播 67% · 15s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h4_38_broadcast.mp4" poster="thumbs/h4_38_broadcast.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h4_m20_find.mp4" poster="thumbs/h4_m20_find.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">新闻悬念播报类开场</div>
-            <div class="vmeta"><span>新闻悬念</span><strong>平均播放 36.58s</strong></div>
+            <div class="vtitle">演播室播报 · "我们错怪你了"<span class="vtag food">食品饮料</span></div>
+            <div class="vmeta"><span>演播室包装</span><strong>3s完播 69% · 16s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h4_gossip.mp4" poster="thumbs/h4_gossip.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h4_m25_hot.mp4" poster="thumbs/h4_m25_hot.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">娱乐主持人 · 明星八卦资讯播报</div>
-            <div class="vmeta"><span>娱乐八卦</span><strong>3s完播 57%</strong></div>
+            <div class="vtitle">热点绑定 · 国内热度最高两个省<span class="vtag food">食品饮料</span></div>
+            <div class="vmeta"><span>热点借势</span><strong>3s完播 73% · 14s</strong></div>
           </div>
         </div>
         <div class="vcard">
-          <video src="videos/h4_streetage.mp4" poster="thumbs/h4_streetage.jpg" controls preload="metadata" playsinline muted></video>
+          <video src="videos/h4_m29_street.mp4" poster="thumbs/h4_m29_street.jpg" controls preload="metadata" playsinline muted></video>
           <div class="info">
-            <div class="vtitle">素人街采 · 年龄焦虑话题切入</div>
-            <div class="vmeta"><span>街采话题</span><strong>3s完播 66%</strong></div>
+            <div class="vtitle">素人街采 · 90岁奶奶谈居家养老<span class="vtag food">食品饮料</span></div>
+            <div class="vmeta"><span>街采话题</span><strong>3s完播 72% · 20s</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hook 5 -->
+    <div class="hook">
+      <div class="hook-head">
+        <span class="hook-badge">钩子类型 05 · NEW</span>
+        <h4 class="hook-title">猎奇悬念钩子 · 不可能画面 / 悬念数字前置</h4>
+        <span class="hook-en">CURIOSITY &amp; SUSPENSE HOOK</span>
+      </div>
+      <div class="hook-desc">用<b>现实中不可能发生的画面</b>（机器人、蒸被子、科技奇观）或<b>夸张的悬念数字</b>（"只要不到 90 岁…"）在前 3 秒制造认知失调，用户为了"搞清楚发生了什么"而停止快滑，再在 5 秒后接入产品功效。<b style="color:var(--brand)">本期新增类型：30 条样本中 3 条命中，且其中 1 条是全场日均消耗 TOP1（5.07w/日）</b>，说明猎奇开场在高消耗素材中已被验证。可同模板复用（见 case 2 与 case 3 为同一"蒸笼猎奇"模板的双版本投放）。</div>
+      <div class="hook-tags">
+        <span class="tag">科技/AI 猎奇画面</span>
+        <span class="tag">生活反常识操作</span>
+        <span class="tag">悬念数字前置</span>
+        <span class="tag">"老外看到都傻眼"式民族情绪</span>
+        <span class="tag">同模板多版本复用</span>
+      </div>
+      <div class="videos">
+        <div class="vcard">
+          <video src="videos/h5_m01_robot.mp4" poster="thumbs/h5_m01_robot.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">科技猎奇 · 老外看到都傻眼（机器人）<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>悬念数字</span><strong>3s完播 69% · 13s · 5.07w/日</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h5_m06_steam.mp4" poster="thumbs/h5_m06_steam.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">生活猎奇 · 你看这被子都蒸成这样了<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>反常识操作</span><strong>3s完播 77% · 16s</strong></div>
+          </div>
+        </div>
+        <div class="vcard">
+          <video src="videos/h5_m19_steam2.mp4" poster="thumbs/h5_m19_steam2.jpg" controls preload="metadata" playsinline muted></video>
+          <div class="info">
+            <div class="vtitle">同模板复用 · 蒸笼猎奇第二版<span class="vtag mh">美护</span></div>
+            <div class="vmeta"><span>模板复制</span><strong>3s完播 77% · 17s</strong></div>
           </div>
         </div>
       </div>
@@ -459,7 +500,7 @@
   </section>
 
   <footer>
-    © 2026 视频号广告投放洞察 · 本报告基于 69 条素材真实数据分析，为客户内部提案参考使用
+    © 2026 视频号广告投放洞察 · 本报告基于 99 条素材真实数据分析（2026-10-13 新增 30 条跨行业样本，新增 05 猎奇悬念类），为客户内部提案参考使用<br><span style="font-size:12px;opacity:.75">指标口径：3秒完播率 = 100% − 3秒快滑率（越高越好）；平均播放时长单位 s</span>
   </footer>
 
 </div>
