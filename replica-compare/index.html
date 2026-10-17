@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爆款开篇 AI 复刻效果比对 · 舞厅反差护肤</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1a1d24; --ink2:#4a5160; --ink3:#8b93a3;
+    --line:#e6e9ef; --red:#c8302e; --red-soft:#fdeeed; --blue:#1f5fa9; --blue-soft:#edf3fb;
+    --amber:#9a6a12; --amber-soft:#fdf4e3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;padding:32px 20px 64px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .eyebrow{font-size:12px;letter-spacing:.14em;color:var(--ink3);text-transform:uppercase;margin-bottom:10px}
+  h1{font-size:27px;letter-spacing:-.3px;line-height:1.35;margin-bottom:10px}
+  .sub{color:var(--ink2);font-size:14px;margin-bottom:6px}
+  .meta{color:var(--ink3);font-size:12.5px;margin-bottom:26px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:20px}
+  h2{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+  h2 .dot{width:3px;height:15px;background:var(--red);border-radius:2px;display:inline-block}
+  .verdict{border-left:3px solid var(--red);background:var(--red-soft);border-radius:0 10px 10px 0;
+    padding:15px 18px;margin-bottom:20px}
+  .verdict .k{font-size:12px;color:var(--red);font-weight:600;letter-spacing:.06em;margin-bottom:5px}
+  .verdict p{font-size:14.5px;color:#5c2221}
+  .verdict b{color:var(--red)}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:680px){.duo{grid-template-columns:1fr}}
+  .pane{background:#0e1014;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  .pane video{display:block;width:100%;height:auto;background:#0e1014;aspect-ratio:9/16;object-fit:contain}
+  .pane .cap{display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:10px 13px;background:#fff;border-top:1px solid var(--line)}
+  .pane .cap .t{font-size:13.5px;font-weight:600}
+  .tag{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:600;white-space:nowrap}
+  .tag.orig{background:var(--blue-soft);color:var(--blue)}
+  .tag.rep{background:var(--amber-soft);color:var(--amber)}
+  .bar{display:flex;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap}
+  button{font:inherit;font-size:13px;padding:8px 16px;border-radius:8px;border:1px solid var(--line);
+    background:#fff;color:var(--ink);cursor:pointer;transition:.15s}
+  button:hover{border-color:#c9cfda;background:#fafbfc}
+  button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+  button.primary:hover{background:#2c323d}
+  .hint{font-size:12.5px;color:var(--ink3)}
+  .sbs{width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0e1014}
+  .sbs video{display:block;width:100%;height:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;font-size:11.5px;letter-spacing:.05em;color:var(--ink3);font-weight:600;
+    padding:0 0 9px;border-bottom:1px solid var(--line);text-transform:uppercase}
+  td{padding:14px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+  tr:last-child td{border-bottom:none}
+  td.ts{width:62px;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);white-space:nowrap}
+  td.shot{width:33%;vertical-align:top}
+  td.shot img{width:100%;border-radius:8px;display:block;border:1px solid var(--line)}
+  td.shot .lb{font-size:11px;margin-top:6px;font-weight:600}
+  .lb.o{color:var(--blue)} .lb.r{color:var(--amber)}
+  td.diff{font-size:12.8px;line-height:1.6}
+  ul.find{list-style:none;font-size:14px}
+  ul.find li{position:relative;padding-left:22px;margin-bottom:14px;color:var(--ink2)}
+  ul.find li:last-child{margin-bottom:0}
+  ul.find li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;
+    border-radius:50%;background:var(--red)}
+  ul.find b{color:var(--ink);font-weight:600}
+  .qa{display:grid;grid-template-columns:1fr;gap:12px}
+  .qa .item{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:#fcfcfd}
+  .qa .item .q{font-size:12px;color:var(--ink3);margin-bottom:5px;font-weight:600;letter-spacing:.03em}
+  .qa .item .a{font-size:13.5px;color:var(--ink2)}
+  .qa .item .a b{color:var(--ink)}
+  .foot{color:var(--ink3);font-size:12px;margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
+  .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+    border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:600;margin-right:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Miaosi · AI 复刻质检</div>
+  <h1>爆款开篇 AI 复刻效果比对<br><span style="color:var(--ink3);font-weight:400;font-size:20px">舞厅反差护肤 · 原片 vs 复刻</span></h1>
+  <div class="sub">样本：原爆款「跳舞联谊 × 抗皱起泡对比」／复刻片（AI 生成）</div>
+  <div class="meta">两段均截取前 10 秒 · 3 秒完播率为原片历史数据 · 2026-10-18</div>
+
+  <div class="verdict">
+    <div class="k">结论</div>
+    <p>复刻片保留了原片的<b>场景符号</b>（舞厅、迪斯科球、剪刀、熟龄男女、后背特写），但丢失了原片的<b>动作焦点</b>——男模视线由「产品涂抹动作」偏移至「女伴面部」，画面主叙事从<b>功效可视化</b>滑向<b>人物关系演绎</b>，导致开篇信息密度下降、剧情动机不成立。</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="dot"></span>双片同步播放</h2>
+    <div class="duo">
+      <div class="pane">
+        <video id="vOrg" src="videos/original_10s.mp4" poster="frames/o1.jpg" controls playsinline preload="metadata"></video>
+        <div class="cap"><span class="t">原爆款</span><span class="tag orig">基准 · 76.8% 3s 完播</span></div>
+      </div>
+      <div class="pane">
+        <video id="vRep" src="videos/replica_10s.mp4" poster="frames/r1.jpg" controls playsinline preload="metadata"></video>
+        <div class="cap"><span class="t">AI 复刻片</span><span class="tag rep">复刻 · 细节偏离</span></div>
+      </div>
+    </div>
+    <div class="bar">
+      <button class="primary" id="syncPlay">同步播放 / 暂停</button>
+      <button id="syncReset">回到起点</button>
+      <span class="hint">左右画面同为 0–10s，可直接对照动作与视线落点</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="dot"></span>逐帧并排（左：原片／右：复刻）</h2>
+    <div class="sbs"><video src="videos/side_by_side_10s.mp4" controls playsinline preload="metadata"></video></div>
+    <div class="bar"><span class="hint">同一时间轴横向拼接，便于逐秒核对机位、人物朝向与视线方向</span></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="dot"></span>关键帧差异拆解</h2>
+    <table>
+      <thead>
+        <tr><th>时间</th><th>原片</th><th>复刻片</th><th>差异</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ts">0.5s</td>
+          <td class="shot"><img src="frames/o1.jpg" alt="原片 0.5s"><div class="lb o">原片</div></td>
+          <td class="shot"><img src="frames/r1.jpg" alt="复刻 0.5s"><div class="lb r">复刻</div></td>
+          <td class="diff">原片以<b>拥抱共舞的中景</b>入场，女主背身、男模侧脸贴向女主耳边，镜头语言是「偷看」；复刻片改为<b>正面双人对视</b>构图，两人目光在开场即交汇，叙事关系由「单方窥视」变为「双向互动」。</td>
+        </tr>
+        <tr>
+          <td class="ts">2.0s</td>
+          <td class="shot"><img src="frames/o2.jpg" alt="原片 2s"><div class="lb o">原片</div></td>
+          <td class="shot"><img src="frames/r2.jpg" alt="复刻 2s"><div class="lb r">复刻</div></td>
+          <td class="diff">原片<b>剪刀已入画</b>并指向女主后背衣料，形成强冲突的动作起点；复刻片同一时点剪刀尚未成为视觉主体，冲突建立被推迟。</td>
+        </tr>
+        <tr>
+          <td class="ts">4.0s</td>
+          <td class="shot"><img src="frames/o3.jpg" alt="原片 4s"><div class="lb o">原片</div></td>
+          <td class="shot"><img src="frames/r3.jpg" alt="复刻 4s"><div class="lb r">复刻</div></td>
+          <td class="diff">原片<b>产品罐体已进入前景</b>，手指与罐体占据画面下方动作区；复刻片产品出现更晚，前景被手臂与衣料占据。</td>
+        </tr>
+        <tr>
+          <td class="ts">6.0s</td>
+          <td class="shot"><img src="frames/o4.jpg" alt="原片 6s"><div class="lb o">原片</div></td>
+          <td class="shot"><img src="frames/r4.jpg" alt="复刻 6s"><div class="lb r">复刻</div></td>
+          <td class="diff"><b>核心偏离点。</b>原片男模低头，视线锁定<b>手指涂抹位置</b>，其惊讶反应有明确指向物；复刻片男模视线抬至<b>女伴面部</b>，反应失去动作依据，观众无法从表情读出「产品起效」的信息。</td>
+        </tr>
+        <tr>
+          <td class="ts">9.0s</td>
+          <td class="shot"><img src="frames/o5.jpg" alt="原片 9s"><div class="lb o">原片</div></td>
+          <td class="shot"><img src="frames/r5.jpg" alt="复刻 9s"><div class="lb r">复刻</div></td>
+          <td class="diff">原片泡沫在背部形成<b>不规则大面积起泡</b>，视觉冲击与「涂抹—反应」链路闭合；复刻片泡沫体积更小、边界更整齐，戏剧化程度不足。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2><span class="dot"></span>专业结论</h2>
+    <ul class="find">
+      <li><b>视线锚点错位，动作焦点丢失。</b>原片中男模的眼神始终服务于「产品正被涂抹」这一信息，观众注意力被手指与产品牵引，形成「动作—反应」的完整闭环。复刻片的男模在开场即与女模对视，视线锚点从<b>产品</b>移到<b>人</b>，画面主叙事由功效演示滑向情感互动。</li>
+      <li><b>剧情动机不成立。</b>男模的震惊表情缺少明确的指向物——原片指向「背上冒泡」，复刻片指向「女伴的脸」。反应镜头一旦脱离动作对象，观众无法完成因果补全，戏剧张力被稀释。</li>
+      <li><b>节奏与信息密度下降。</b>原片在 2 秒内完成「剪刀入画—冲突建立」，复刻片把这一动作推迟，前 3 秒的信息承载量低于原片，直接对应 3 秒完播与后续 ECO 表现的落差。</li>
+      <li><b>符号齐全但调度失效。</b>舞厅、迪斯科球、剪刀、熟龄男女、开背裙等元素均已复刻，说明模型学到了<b>视觉素材</b>，但未学到<b>镜头调度</b>——即「谁在看什么、看多久、为什么看」。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="dot"></span>复刻优化要点</h2>
+    <div class="qa">
+      <div class="item">
+        <div class="q"><span class="num">1</span>把视线写进提示词</div>
+        <div class="a">明确约束「男模视线锁定女模<b>后背涂抹位置</b>，全程不看镜头、不看女模面部」，将视线对象作为独立参数，而非交给模型自行判断。</div>
+      </div>
+      <div class="item">
+        <div class="q"><span class="num">2</span>锁定动作主体在前景下三分之一</div>
+        <div class="a">手指与产品罐体固定在画面下方三分之一的前景带，且为<b>唯一运动主体</b>；背景人物只做微动，避免抢焦点。</div>
+      </div>
+      <div class="item">
+        <div class="q"><span class="num">3</span>反应镜头与动作镜头分切</div>
+        <div class="a">不要在同一个镜头里同时呈现「涂抹动作」与「男模表情」，改为动作特写 → 反应特写交替，保证每个镜头只有一个信息点。</div>
+      </div>
+      <div class="item">
+        <div class="q"><span class="num">4</span>强冲突道具前置到 0–2 秒</div>
+        <div class="a">剪刀需在 2 秒内进入画面并指向衣料，用作开篇钩子；延迟出现会让前 3 秒失去冲突驱动。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    数据说明：原片 3 秒完播 76.8% 为 0915 批次打标时记录值（口径为 100% − 3 秒快滑率）；复刻片未取得投放数据，本页仅做画面对照与叙事结构判断，不代表最终跑量结论。<br>
+    素材：两段均截取前 10 秒，未做变速、未做裁切，音画同步。
+  </div>
+
+</div>
+
+<script>
+  var org = document.getElementById('vOrg'), rep = document.getElementById('vRep');
+  var btn = document.getElementById('syncPlay'), rst = document.getElementById('syncReset');
+  btn.addEventListener('click', function(){
+    if (org.paused) { org.currentTime = rep.currentTime = Math.max(org.currentTime, 0); org.play(); rep.play(); this.textContent = '同步暂停'; }
+    else { org.pause(); rep.pause(); this.textContent = '同步播放 / 暂停'; }
+  });
+  rst.addEventListener('click', function(){
+    org.pause(); rep.pause(); org.currentTime = 0; rep.currentTime = 0; btn.textContent = '同步播放 / 暂停';
+  });
+</script>
+</body>
+</html>
